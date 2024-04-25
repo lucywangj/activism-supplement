@@ -2,7 +2,7 @@
 var $navigationLinks = $('#navigation > .nav-wrapper > ul > li > a');
 // console.log($navigationLinks)
 // cache (in reversed order) the sections
-var $cards = $($(".decade-header").get().reverse());
+var $cards = $($(".word-header").get().reverse());
 
 
 
