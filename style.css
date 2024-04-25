@@ -48,7 +48,7 @@
   font-size: 80px;
 }
 
-.decade-text{
+.word-text{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -73,7 +73,7 @@
   font-size: 19px;
 }
 
-.decade-header{
+.word-header{
   padding-top: 40px;
   text-align: center;
   font-family: franklin-gothic-urw-cond;
@@ -94,16 +94,16 @@
   text-decoration: underline;
 }
 
-.decade-text p{
+.word-text p{
   padding-bottom: 15px;
 }
 
-.decade-text a{
+.word-text a{
   color: #c24532;
   text-decoration: none;
 }
 
-.decade-text a:hover{
+.word-text a:hover{
   text-decoration: underline;
 }
 
@@ -215,11 +215,11 @@ path.domain{
   display: flex;
 }
 
-.decades{
+.words{
   width: 90%;
 }
 
-.decade{
+.word{
   display: flex;
   flex-direction: column;
 
@@ -316,7 +316,7 @@ browser window really skinny */
       display: none;
     }
 
-    .decades{
+    .words{
       width: 100%;
     }
     .intro{
