@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- usually this can just be the headline, but check in -->
+  <title>140 years of Princeton History</title>
+  <!-- 
+        CHANGE THIS! "preview-img.png" defines what the preview image will be for 
+        links and social media, so be sure to change this to whatever the
+         dominant media will be
+    -->
+  <meta property="og:image"
+    content="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/dommedia-01.png">
+
+  <!--
+        CHANGE THIS! Make the content something meaningful to the article
+        (reach out to editor for suggestions if needed)
+    -->
+  <meta property=“og:description”
+    content="At The Daily Princetonian, we’re used to focusing on the present — reporting on stories that unfold as we write.
+
+  With this project, we at the ‘Prince’, the second-oldest college newspaper in the country, took a step back. Leveraging data from the The Daily Princetonian Larry Dupraz Archives, kindly shared with us by Mudd Library, we immersed ourselves in decades worth of print publications in the hope of better understanding the journey the ‘Prince’ and the University have been on over the past 140 years." />
+
+  <!-- defines standard character set—useful for ensuring curly quotes
+      aren't corrupted by different encodings -->
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <!-- ensures mobile layout works-->
+  <meta name="viewport" content="width=device-width">
+
+
+  <!-- link to our logo for favicon -->
+  <link rel="icon" type="image/png"
+    href="https://dirgyzwl2hnqq.cloudfront.net/ff9419fb986f760c1b0b24d4b9046051/dist/img/favicons/apple-icon-57x57.png" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics COMMENT OUT UNTIL PUB -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0QFG1LJXS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-H0QFG1LJXS');
+  </script>
+  <!--/site tag-->
+
+  <!-- 
+        a reference to our brand fonts (if there's any Adobe font not 
+        available on the stylesheet, let the head digital news 
+        editor know and it can be added) 
+    -->
+  <link rel="stylesheet" href="https://use.typekit.net/gkx8zdh.css">
+
+  <!-- reference to your CSS -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="navbar.css" rel="stylesheet" type="text/css" />
+
+  <!-- Load d3.js -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <!-- smooth scrolling -->
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links
+      $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+  </script>
+
+  <base target="_blank">.
+
+</head>
+
+<body>
+  <!-- Content goes here -->
+
+  <nav id="top-nav">
+    <span>
+      <a href="https://dailyprincetonian.com">
+        <img class="logo" alt="The Daily Princetonian logo"
+          src="https://dirgyzwl2hnqq.cloudfront.net/8ab5ccf6483af37484451354a9d9e4e3/dist/img/prince_logo_6-20-2020.svg" /></a>
+      <!-- "https://dirgyzwl2hnqq.cloudfront.net/8ab5ccf6483af37484451354a9d9e4e3/dist/img/prince_logo_scrolled.png"  -->
+      <a href="#coverimage" style="text-decoration: none;"><span class="project-name">&ensp;|&ensp;140 Years of
+          Princeton History</span>
+    </span></a>
+
+  </nav>
+  <!-- <input type="text" id="selectButton">  -->
+  <div class="intro">
+    <div class="headline">
+      <p class="overline"><strong>PROJECTS </strong><br></p>
+      <h1><span class="years">140 YEARS</span><br>of Princeton History</h1>
+      <p class="underline"><em>as told by The Daily Princetonian archives</em></p>
+      <p class="byline">By Anika Maskara and Elaine Huang</p>
+    </div>
+    <img
+      src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings-01.png">
+  </div>
+  <div class="intro-text">
+    <p>
+      <strong>At The Daily Princetonian</strong>, we’re used to focusing on the present — reporting on stories that
+      unfold as we write.
+    </p>
+    <p>
+      With this project, we at the ‘Prince’, the second-oldest college newspaper in the country, took a step back.
+      Leveraging data from the <a href="https://theprince.princeton.edu/">The Daily Princetonian Larry Dupraz
+        Archives</a>, kindly shared with us by Mudd Library, we immersed ourselves in decades worth of print
+      publications in the hope of better understanding the journey the ‘Prince’ and the University have been on over the
+      past 140 years.
+    </p>
+    <p>
+      To help you explore our findings, for each decade, we’ve summarized a few emblematic terms, sized relatively to
+      their popularity. Clicking on a particular emblematic term will allow you to see a chart of the frequency with
+      which it appeared in the ‘Prince’ over time. Additionally, we’ve included search functionality if you’d like to
+      see a
+      frequency chart for words of your own choosing.
+    </p>
+    <p>
+      Like The Pudding’s <a href="https://pudding.cool/2018/12/brief-history/">New York Times headlines project</a> that
+      served as our inspiration, in order to find terms particularly emblematic of a particular decade, we compared word
+      usage frequencies between a decade and the preceding and following decades — selecting terms that were used
+      disportionately more often in the decade at hand as compared to neighboring decades. You can read more on this
+      process in our <a href="#methodology">methodology section</a>.
+    </p>
+    <p>
+      This summary is only a bird’s eye view of the information the archives hold, and we hope our work here inspires
+      further analysis with its wealth of data.
+    </p>
+    <p>
+      <em>Cover Art and Web Design by Anika Maskara</em>
+    </p>
+    <p>
+      <em>Copy editing by Tiffany Cao</em>
+    </p>
+  </div>
+
+  <!-- Create a div where the graph will take place -->
+  <div class="content">
+    <nav id="navigation">
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="#b1880">∙∙1880s∙∙</a></li>
+          <li><a href="#b1890">∙∙1890s∙∙</a></li>
+          <li><a href="#b1900">∙∙1900s∙∙</a></li>
+          <li><a href="#b1910">∙∙1910s∙∙</a></li>
+          <li><a href="#b1920">∙∙1920s∙∙</a></li>
+          <li><a href="#b1930">∙∙1930s∙∙</a></li>
+          <li><a href="#b1940">∙∙1940s∙∙</a></li>
+          <li><a href="#b1950">∙∙1950s∙∙</a></li>
+          <li><a href="#b1960">∙∙1960s∙∙</a></li>
+          <li><a href="#b1970">∙∙1970s∙∙</a></li>
+          <li><a href="#b1980">∙∙1980s∙∙</a></li>
+          <li><a href="#b1990">∙∙1990s∙∙</a></li>
+          <li><a href="#b2000">∙∙2000s∙∙</a></li>
+          <li><a href="#b2010">∙∙2010s∙∙</a></li>
+          <li><a href="#bExplore">∙∙Explore∙∙</a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <div class="decades">
+      <div class="decade">
+        <h1 class="decade-header" id="b1880">∙∙1880s∙∙</h1>
+        <div class="graph-block-container" id="d1880">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            Offering an 1880s alternative to present-day Google searches, the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18890508-01.2.16&srpos=1&e=------188-en-20--1--txt-txIN-grocer------">Princeton
+              Directory</a> section of the newspaper featured a list of services offered by local shops and business
+            owners, including tailors, bookbinders, grocers, apothecaries, and more.
+          </p>
+          <p>
+            During that decade, The Daily Princetonian covered sports news in immense detail, regularly incorporating <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18880919-01.2.4&e=------188-en-20-Princetonian-1--txt-txIN-mercur------">box
+              scores</a> into articles on University athletics. Athlete names — such as <a
+              href="https://sabr.org/bioproj/person/dan-bickham/">Dan Bickham</a>, pitcher and outfielder on the
+            school’s baseball team — rather than political or news-based terms, showed up with the greatest frequency.
+          </p>
+          <p>
+            In 1877, Lasell Leaves, the magazine of Lasell University (a private university in Massachusetts), <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18771129-01.2.23&srpos=7&e=------187-en-20-Princetonian-1--txt-txIN-tobacco------">criticized</a>
+            The Crimson’s character for “the plentiful supply of lager beer and tobacco advertisements contained in its
+            columns.” A few years after reporting on this criticism, hundreds of <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18850420-01.2.14.3&srpos=1&e=------188-en-20-Princetonian-1--txt-txIN-tobacco------">tobacco
+              advertisements</a> flooded the advertisement columns and Princeton Directory sections of the ‘Prince’ in
+            the 1880s, particularly in 1885 and 1886.
+          </p>
+          <p>
+            Reflecting the language of the time and the fact that Princeton was not yet a coeducational institution, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18830427-01.2.7&srpos=3&e=------188-en-20-Princetonian-1--txt-txIN-gentleman------">gendered
+              language</a> like “gentleman” was also common when reporting on campus news.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18880919-01.2.7&srpos=3&e=------188-en-20-Princetonian-1--txt-txIN-mercur------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1880s/1880_FootballPlayers.jpg">
+            </a>
+            <p class="caption">September 19th, 1888</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18830209-01.2.14&srpos=2&e=------188-en-20-Princetonian-1--txt-txIN-lacrosse------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1880s/1880_Lacrosse.jpg">
+            </a>
+            <p class="caption">February 9th, 1883</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18890327-01.2.14&e=------188-en-20--1--txt-txIN-grocers------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1880s/1880_PrincetonDirectory.jpg">
+            </a>
+            <p class="caption">March 27th, 1889</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="decade">
+        <h1 class="decade-header" id="b1890">∙∙1890s∙∙</h1>
+        <div class="graph-block-container" id="d1890">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            Like the 1880s, the most disproportionately used terms of the 1890s related mainly to <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18901027-01.2.2&srpos=2&e=------189-en-20-Princetonian-1--txt-txIN-ball------">sports</a>
+            news and <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18990525-01.2.17.4&srpos=3&e=------189-en-20-Princetonian-1--txt-txIN-ball-ADVERTISEMENT-----">advertisements</a>
+            for everything from <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18900106-01.2.17&srpos=1&e=------189-en-20-Princetonian-1-byDA-txt-txIN-furniture------">furniture</a>
+            to <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18900108-01.2.13&srpos=2&e=------189-en-20-Princetonian-1-byDA-txt-txIN-drug------">drug
+              stores</a>.
+          </p>
+          <p>
+            Sports coverage at the time remained more detailed than today, with <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18970325-02.2.18&srpos=1&e=------189-en-20-Princetonian-1--txt-txIN-team------">full
+              team rosters</a> printed alongside game <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18911030-01.2.2&srpos=6&e=------189-en-20-Princetonian-1--txt-txIN-ball------">play-by-plays</a>
+            for a variety of sports including football, crew, and cycling. The frequency of the word “bicycle” in fact,
+            referring to <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18970527-02.2.23&srpos=12&e=-------en-20-Princetonian-1--txt-txIN-bicycle------">cycling</a>
+            competitions, peaked in the 1890s.
+          </p>
+          <p>
+            The teams covered were associated with the University and played familiar foes like <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18900203-01.2.9&srpos=45&e=------189-en-20-Princetonian-41-byDA-txt-txIN-harvard------">Harvard</a>
+            and Yale. However, the paper's coverage was not always Princeton-specific, as it was also common to report
+            on games between <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18940514-01.2.3&srpos=21&e=-------en-20-Princetonian-21--txt-txIN-harvard------">other
+              northeastern institutions</a>.
+          </p>
+          <p>
+            “Studying” was also used disportionately in this decade, most often included in the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18980312-01.2.5&srpos=4&e=-------en-20-Princetonian-1--txt-txIN-studying------">Alumni
+              Notes</a> section of the paper to describe the academic accomplishments of alumni who pursued further
+            education in fields like medicine or law. Without LinkedIn, students had to be subscribed to the ‘Prince’ to
+            keep up with alumni careers and network. The Alumni Notes section was so popular that the ‘Prince’ fielded
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18981124-02.2.8&srpos=3&e=------189-en-20-Princetonian-1--txt-txIN-%22alumni+notes%22------">several
+              complaints</a> from readers asking the editors to devote more space to them.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18900409-01.1.4&e=------189-en-20-Princetonian-1--txt-txIN-groceries------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1890s/1890_ads.jpg">
+            </a>
+            <p class="caption">April 9th, 1890</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18930124-01.2.2&srpos=2&e=------189-en-20--1--txt-txIN-studying------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1890s/1890_new.jpg">
+            </a>
+            <p class="caption">January 24th, 1893</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18901027-01&e=------189-en-20-Princetonian-1--txt-txIN-ball------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1890s/1890_sportsplay.jpg">
+            </a>
+            <p class="caption">October 27th, 1890</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1900">∙∙1900s∙∙</h1>
+        <div class="graph-block-container" id="d1900">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            During the 1900s, ‘Prince’ headlines began suggesting a stronger presence of the performing arts on
+            Princeton’s campus, with the word “performance” spiking in frequency compared to neighboring decades.
+            Furthering this trend, various performing art groups such as Triangle Club posted rehearsal and show
+            announcements in the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19040308-01.2.6&srpos=3&e=------190-en-20--1--txt-txIN-triangle------">University
+              Notices</a> section of the newspaper — the equivalent of today’s listservs, group chat messages, and
+            calendar invites.
+          </p>
+          <p>
+            In 1895, Princeton built <a href="https://princetoniana.princeton.edu/campus/timeline/1897/casino">The
+              Casino</a>, the Triangle Club’s first theater. The building also served as a hub for the blossoming
+            performing arts scene and was used for theatrical productions, dance recitals, and more.
+          </p>
+          <p>
+            First produced in <a href="http://www.princeton.edu/~yearbook/about.html">1864</a>, the <a
+              href="https://blogs.princeton.edu/mudd/tag/bric-a-brac/">Bric-a-Brac</a> was Princeton’s student life
+            yearbook that has since been <a href="https://www.studentagencies.net/category-s/44.htm">discontinued</a>,
+            rendering it unfamiliar to most present-day Tigers. Advertising for the Bric-a-Brac committee, the
+            ‘Prince’ played an integral role in sharing information regarding the yearbook’s <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19011213-01.2.5&srpos=3&e=------190-en-20--1--txt-txIN-bric%252Da%252Dbrac------">sale</a>
+            and distribution.
+          </p>
+          <p>
+            The term “o’clock” was also disproportionately used in this decade, visible throughout the University
+            Notices section when announcing events and <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19080316-01.2.7&srpos=1&e=------190-en-20--1--txt-txIN-o%e2%80%99clock------">meeting
+              times</a>, as opposed to the standard numeral system used today.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19011214-01.2.11&srpos=13&e=------190-en-20-Princetonian-1--txt-txIN-bric%252Da%252Dbrac------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1900s/1900_BricABrac.jpg">
+            </a>
+            <p class="caption">December 4th, 1901</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19021202-01.2.11&srpos=14&e=------190-en-20-Princetonian-1--txt-txIN-triangle------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1900s/1900_TriangleClubAndAds.jpg">
+            </a>
+            <p class="caption">December 2nd, 1902</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19030224-01.2.9&srpos=2&e=------190-en-20-Princetonian-1--txt-txIN-triangle------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1900s/1900_UniversityNotices.jpg">
+            </a>
+            <p class="caption">February 24th, 1903</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1910">∙∙1910s∙∙</h1>
+        <div class="graph-block-container" id="d1910">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            In 1910, after the ‘Prince’ became an official member of <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19100210-01.2.6&srpos=2&e=------191-en-20-Princetonian-1-byDA-txt-txIN-%22associated+press%22------">the
+              Associated Press</a>, the paper began publishing wire messages from the A.P. with daily world news
+            summaries. These stories were attributed to the Associated Press in the byline, contributing to a steep
+            spike in the usage of the term “associated.”
+          </p>
+          <p>
+            Other emblematic terms were related to <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19141116-01.2.23&srpos=26&e=------191-en-20-Princetonian-21--txt-txIN-military+training----1914--">World
+              War I</a>. Even before the United States officially entered “The Great War,” fears of an impending
+            American entry prompted the establishment of <a
+              href="https://theprince.princeton.edu/princetonperiodicals/cgi-bin/princetonperiodicals?a=d&d=Princetonian19141208-01.2.7&srpos=2&e=------191-en-20--1--txt-txIN-------">military
+              training</a> classes on campus and the organization of a <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19170205-01.2.12&srpos=3&e=-------en-20--1--txt-txIN-Princeton+Provisional+Battalion------">Princeton
+              Provisional Battalion</a> for training military officers — foreshadowing the launch of the Reserve
+            Officers’ Training Corps <a href="https://princetonarmyrotc.princeton.edu/">(ROTC) program</a> in 1919. The
+            program celebrated its centennial just three years ago.
+          </p>
+          <p>
+            In April 1917, then Assistant Secretary of the Navy Franklin D. Roosevelt <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19170423-01.2.11&srpos=6&e=------191-en-20--1--txt-txIN-Assistant+Secretary+of+the+Navy------">penned
+              a letter</a> to The Daily Princetonian, answering undergraduate questions about the Naval Coast Defense
+            Reserve, including the commitment that enlistment entailed and whether a background in “summer yachting”
+            would be helpful.
+          </p>
+          <p>
+            In other aquatic news, intercollege varsity rowing <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19110520-01.2.6&srpos=34&e=------191-en-20-Princetonian-21-byDA-txt-txIN-%22varsity+crew%22------">returned</a>
+            to Princeton in 1911 for the first time since a lack of a <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian18840125-01.2.10&srpos=4&e=------188-en-20-Princetonian-1--txt-txIN-rowing----1884--">proper
+              practice</a> space had forced the program to retire in the <a
+              href="https://en.wikipedia.org/wiki/Shea_Rowing_Center">1880s</a>. This return was made possible after the
+            construction of <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19061206-01.2.2&srpos=1&e=-------en-20-Princetonian-1-byDA-txt-txIN-%22lake+carnegie%22------">Lake
+              Carnegie</a> in 1906, a gift from <a
+              href="https://princetoniana.princeton.edu/campus/landmarks/lake-carnegie">steel magnate</a> Andrew
+            Carnegie.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19150304-01&e=------191-en-20--1--txt-txIN-military------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1910s/1910_frontpage.jpg">
+            </a>
+            <p class="caption">March 4th, 1915</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19141116-01.2.23&srpos=26&e=------191-en-20-Princetonian-21--txt-txIN-military+training----1914--">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1910s/1910_ad.jpg">
+            </a>
+            <p class="caption">November 16th, 1914</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19170423-01&e=------191-en-20--1--txt-txIN-Assistant+Secretary+of+the+Navy------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1910s/1910_roosevelt.jpg">
+            </a>
+            <p class="caption">April 23, 1917</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1920">∙∙1920s∙∙</h1>
+        <div class="graph-block-container" id="d1920">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            During the Roaring Twenties, performing arts and social events were bustling on campus. The prom committee
+            was busy at work planning a night to remember. In hopes of continuing to have proms on campus in the future,
+            the committee also worked to <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19211104-01.2.20&srpos=2&e=------192-en-20-Princetonian-1--txt-txIN-prom------">satisfy
+              institutional guidelines</a>, such as proper conduct on the dance floor and no loitering on campus or
+            Nassau Street after the dance.
+          </p>
+          <p>
+            Orchestras were also regularly invited to perform on campus, and the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19220107-01.2.25&srpos=3&e=------192-en-20-Princetonian-1--txt-txIN-orchestra------">Princeton
+              University Orchestra</a> encouraged undergraduates to join them. Many events and meetings were held in
+            University <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19220123-01.2.31&srpos=2&e=------192-en-20-Princetonian-1--txt-txIN-commons------">Commons</a>
+            or in <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19261002-01.2.21&srpos=1&e=------192-en-20--1--txt-txIN-murray+dodge------">Murray
+              Dodge</a>, with the latter yielding <a
+              href="https://www.princetonianamuseum.org/artifact/fd32dd5b-df7b-45f0-934d-335367a3da54#:~:text=Construction%20began%20in%201878%2C%20and,heavily%20trafficked%20spots%20on%20campus.)">high
+              traffic</a> when students passed the building to attend then-<a
+              href="https://paw.princeton.edu/article/worship-mandated-above">mandatory religious services</a> at the
+            Chapel.
+          </p>
+          <p>
+            Undergraduate speech and debate organizations also became more centralized and established on campus, with
+            the formation of <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19231020-01.2.2&srpos=1&e=------192-en-20-Princetonian-1--txt-txIN-Princeton+Speakers+Council------">Princeton
+              Speakers Council</a>, an Inter-Hall Council composed of Whig, Clio, the Speakers Association, and the
+            Debating Committee.
+          </p>
+          <p>
+            Meanwhile, in sports news, reporters frequently used the term “yearlings” to refer to underclassmen athletes
+            typically in their <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19210602-01.2.4&srpos=19&e=------192-en-20-Princetonian-1--txt-txIN-yearlings------">first
+              year</a>. This trend in the use of “yearlings” mirrors the overall spike in popularity across<strong>
+            </strong><a
+              href="https://books.google.com/ngrams/graph?year_start=1800&year_end=2019&corpus=26&smoothing=7&case_insensitive=on&content=yearlings&direct_url=t4%3B%2Cyearlings%3B%2Cc0%3B%2Cs0%3B%3Byearlings%3B%2Cc0%3B%3BYearlings%3B%2Cc0%3B%3BYEARLINGS%3B%2Cc0#t4%3B%2Cyearlings%3B%2Cc0%3B%2Cs0%3B%3Byearlings%3B%2Cc0%3B%3BYearlings%3B%2Cc0%3B%3BYEARLINGS%3B%2Cc00">Google
+              Books Ngram Viewer</a>’s English corpus of books in 1920.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19290314-01.2.7&e=------192-en-20-Princetonian-1--txt-txIN-orchestra-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1920s/1920_OrchestraAndCurriculum.jpg">
+            </a>
+            <p class="caption">March 14th, 1929</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19260508-02.1.2&e=------192-en-20-Princetonian-1--txt-txIN-orchestra-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1920s/1920_orchestra.jpg">
+            </a>
+            <p class="caption">May 8th, 1926</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19290316-02.2.2&srpos=1&e=------192-en-20-Princetonian-1--txt-txIN-prom-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1920s/1920_Prom.jpg">
+            </a>
+            <p class="caption">March 16, 1929</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1930">∙∙1930s∙∙</h1>
+        <div class="graph-block-container" id="d1930">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+
+        <div class="decade-text">
+          <p>
+            During the 1930s, the term “gold” saw a spike in usage, often in reference to stories about <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19390413-01.2.15&srpos=3&e=------193-en-20-Princetonian-1--txt-txIN-gold+standard------">moving
+              off the gold standard </a>— one of the key national debates in the early years of the Great Depression.
+          </p>
+          <p>
+            In local coverage, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19320226-01.2.9&srpos=2&e=------193-en-20-Princetonian-1-byDA-txt-txIN-crisler------">Herbert
+              O. “Fritz” Crisler</a> signed on as head football coach in 1932. He went on to coach successfully for six
+            years, compiling a <a href="https://en.wikipedia.org/wiki/Fritz_Crisler">35–9–5 record</a> and leading the
+            team through <a href="http://www.princeton.edu/~paw/columns/under_the_ivy/uti032305.html">two undefeated
+              seasons</a> until he left for the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19380211-01.2.19&srpos=38&e=------193-en-20-Princetonian-21-byDA.rev-txt-txIN-crisler------">University
+              of Michigan</a>. Crisler would go on to become a giant in football history, known for his development of
+            the “<a href="https://en.wikipedia.org/wiki/Fritz_Crisler">two-platoon</a>” system at Michigan — the
+            practice of having different player units for offense and defense.
+          </p>
+          <p>
+            Although Princeton’s intramural sports program was already thriving at least <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19151130-01.2.2&srpos=2&e=------191-en-20-Princetonian-1-byDA-txt-txIN-intramural------">two
+              decades</a> prior, coverage of the leagues rose sharply in the 1930s, with <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19370305-01.2.27&srpos=3&e=------193-en-20-Princetonian-1--txt-txIN-intramural------">game
+              schedules</a> and <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19370217-01.2.24&srpos=7&e=------193-en-20-Princetonian-1--txt-txIN-intramural------">outcomes</a>
+            printed regularly. The program was so popular that James Tyson, then-writer at The Harvard Crimson, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19370428-01.2.10&srpos=20&e=------193-en-20-Princetonian-1--txt-txIN-intramural------">praised
+              it</a> when comparing it to Harvard’s much smaller intramural leagues.
+          </p>
+          <p>
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19300109-01.2.11&srpos=1&e=------193-en-20-Princetonian-1-byDA-txt-txIN-mcarter------">McCarter
+              Theatre</a>, designed and financed by the <a
+              href="https://www.mccarter.org/aboutmccarter#:~:text=The%20McCarter%20Theatre%20opened%20on,Princeton%20University's%20famed%20Triangle%20Club.">Triangle
+              Club</a>, officially opened in 1930. The theater’s establishment was made possible by a $250,000 gift from
+            alumnus Thomas N. McCarter Class of 1888. After the theater’s opening, the ‘Prince’ regularly reported on
+            its many <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19380402-01.2.2&srpos=17&e=------193-en-20-Princetonian-1--txt-txIN-mcarter------">performances</a>.
+          </p>
+          <p>
+            The word “geology” was also used disproportionately in the 1930s, oftentimes in reference to “<a
+              href="https://geosciences.princeton.edu/about/history/1930-1950">an unprecedented array</a>” of
+            Princeton-led field work trips to locations including <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19300308-01.2.25&srpos=24&e=------193-en-20-Princetonian-21-byDA-txt-txIN-geology------">the
+              Caribbean</a>, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19300616-01.2.27&srpos=65&e=------193-en-20-Princetonian-61-byDA-txt-txIN-geology------">Yellowstone</a>,
+            and <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19301216-01.2.5&srpos=80&e=------193-en-20-Princetonian-61-byDA-txt-txIN-geology------">Canada</a>.
+          </p>
+        </div>
+
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19320226-01&e=------193-en-20-Princetonian-1-byDA-txt-txIN-crisler------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1930s/1930_crisler.jpg">
+            </a>
+            <p class="caption">February 26th, 1932</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19381201-01&e=------193-en-20-Princetonian-21-byDA-txt-txIN-geology-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1930s/1930_geology.jpg">
+            </a>
+            <p class="caption">December 1st, 1938</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19300220-01&e=------193-en-20-Princetonian-1-byDA-txt-txIN-mcarter-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1930s/mcarter1930.jpg">
+            </a>
+            <p class="caption">February 20th, 1930</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="decade">
+        <h1 class="decade-header" id="b1940">∙∙1940s∙∙</h1>
+        <div class="graph-block-container" id="d1940">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            Just as World War I prompted a shift from local coverage two decades prior, World War II <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19450919-01.2.5&srpos=1&e=-------en-20--1--txt-txIN-world+war------">dominated
+              headlines</a> in the 1940s. As the global war took hold, usage of terms such as “wartime,” “marine,” and
+            “postwar” rose throughout the decade. During the war, the ‘Prince’ faced a staffing shortage, prompting the
+            communications office to publish <a
+              href="https://paw.princeton.edu/article/rally-round-cannon-goin-back-part-i">The Princeton Bulletin</a>
+            three times a week in place of a student-run newspaper.
+          </p>
+          <p>
+            In response to the global crisis, Princeton founded the Department of Aeronautical Engineering. In 1942, the
+            University recruited <a
+              href="https://engineering.princeton.edu/news/2021/07/20/early-years-few-questions-and-answers">Alexander
+              Nikolsky</a>, an engineer who helped build the first practical helicopter, to be one of the first faculty
+            members of the newly founded department. Nikolsky’s contributions helped to establish the department as a
+            leading center for study of the rotary-wing aircraft. Amid growth of aeronautical efforts, mentions of the
+            word “aeronautical” increased ninefold from the previous decade.
+          </p>
+          <p>
+            Established in 1930, Princeton School of Public and International Affairs (SPIA) celebrated its <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19410516-01.2.15&srpos=5&e=------194-en-20--1--txt-txIN-spia------">10th
+              anniversary</a> in 1941 and marked the momentous occasion with the return of many former SPIA members and
+            distinguished guests. In 1948, after the addition of a graduate professional program, Princeton <a
+              href="https://spia.princeton.edu/about/history#:~:text=In%201948%2C%20a%20graduate%20professional,president%20of%20the%20United%20States.">renamed</a>
+            SPIA to the Woodrow Wilson School of Public and International Affairs after Woodrow Wilson Class of 1879,
+            the 28th president of the United States and a former president of the University. Seventy two years later,
+            amid a national racial reckoning spurred by the <a
+              href="https://www.princeton.edu/news/2020/06/27/president-eisgrubers-message-community-removal-woodrow-wilson-name-public-policy">Black
+              Lives Matter movement</a>, the school would return to its prior name.
+          </p>
+          <p>
+            <a
+              href="https://paw.princeton.edu/article/throwbackthursday-%E2%80%98wpru-%E2%80%94-bottom-dial-tops-style%E2%80%99">WPRU</a>,
+            Princeton’s student-run radio station, delivered music to students across campus. Out of the 94 percent of
+            students who had access to radio on campus, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19411104-01.2.5&srpos=3&e=------194-en-20--1--txt-txIN-WPRU------">67
+              percent listened to WPRU</a> — and 37 percent of that subgroup listened to the radio at least one hour
+            each day. Coming a long way from the campus radio station’s initial expectation that “signals may possibly
+            penetrate as far as the Graduate College,” WPRU’s successor, <a
+              href="https://blogs.princeton.edu/mudd/tag/wpru/">WPRB</a>, later moved to the <a
+              href="https://wprb.com">FM dial (103.3)</a>.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19420113-01.2.5&srpos=7&e=------194-en-20-Princetonian-1--txt-txIN-wpru------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1940s/1940_wpru.jpg">
+            </a>
+            <p class="caption">January 13th, 1942</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19400524-01.2.12&srpos=1&e=------194-en-20-Princetonian-1--txt-txIN-spia-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1940s/1940_SPIA.jpg">
+            </a>
+            <p class="caption">May 24th, 1940</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19450919-01.2.5&e=------194-en-20-Princetonian-1--txt-txIN-world+war------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1940s/1940_WWII.jpg">
+            </a>
+            <p class="caption">September 19th, 1945</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="decade">
+        <h1 class="decade-header" id="b1950">∙∙1950s∙∙</h1>
+        <div class="graph-block-container" id="d1950">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            Republican Dwight D. Eisenhower achieved a landslide victory with <a
+              href="https://www.presidency.ucsb.edu/statistics/elections/1952">nearly 55 percent</a> of the popular vote
+            in the 1952 presidential election, still paling in comparison to the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19521022-01.2.2&srpos=3&e=------195-en-20-Princetonian-1--txt-txIN-eisenhower------">73
+              percent</a> majority he won in The Daily Princetonian’s presidential poll.
+          </p>
+          <p>
+            In the context of the 1950s’ <a href="https://www.history.com/topics/cold-war/red-scare">Red Scare</a>, use
+            of the word “communist” in the ‘Prince’ peaked during that decade, leading some articles to even speculate
+            on the existence of <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19540225-01.2.9&srpos=3&e=------195-en-20-Princetonian-1--txt-txIN-communist------">a
+              secret communist cell</a> on campus.
+          </p>
+          <p>
+            Our analysis of this decade also found disproportionate usage of terms like “prayer,” “worship,” and
+            “Episcopal,” oftentimes included in the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19500512-01.2.33&srpos=79&e=------195-en-20-Princetonian-61-byDA-txt-txIN-%22religious+notices%22-ARTICLE-----">Religious
+              Notices</a> section of the paper. Although the University’s chapel requirement would not come to an end
+            until 1964, the ‘Prince’ featured <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19510424-01.2.2&srpos=1&e=------195-en-20-Princetonian-1-byDA-txt-txIN-%22chapel+requirement%22-ARTICLE-----">much
+              discussion</a> on the topic throughout the ’50s, including <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19510425-01.2.9&srpos=3&e=------195-en-20-Princetonian-1--txt-txIN-chapel+poll-ARTICLE-----">one
+              poll</a> in 1951 that found that 75 percent of the undergraduates polled viewed mandatory religious
+            service attendance as “unfavorable.”
+          </p>
+          <p>
+            The decade also saw major shifts on Prospect Avenue. In 1949, Alfred de Jonge ’49 pointed out in a <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19490322-01.2.14&e=-------en-20--1--txt-txIN-------">letter
+              to the editor</a> that while 81.3 percent of all eligible bickerees had been accepted to an eating club
+            after one round of bicker, only 32.1 percent of Jewish eligible bickerees had been accepted. The following
+            bicker season, more than <a href="https://www.jstor.org/stable/23883299">three-quarters</a> of the sophomore
+            class pledged to not join an eating club unless everyone who bickered could get a bid.
+          </p>
+          <p>
+            Following this protest, the ​​Interclub Committee was able to maintain a “<a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19580205-01.2.11&srpos=9&e=------195-en-20-Princetonian-1-byDA-txt-txIN-100+per+cent----1958--">100
+              percent</a>” matching rate until 1958, when 23 sophomores, more than half of whom were Jewish, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19580210-01.2.7&srpos=47&e=------195-en-20-Princetonian-41-byDA-txt-txIN-bicker----1958--">did
+              not receive</a> a bid. The resulting scandal, which became the subject of <a
+              href="https://www.nytimes.com/1958/02/11/archives/23-at-princeton-reject-club-bid-some-sophomores-charge-they-suffer.html">national</a>
+            outcry, was known as the “<a href="https://www.princeton.edu/~paw/columns/rally_round/rrc061108.html">Dirty
+              Bicker</a>” of 1958.
+          </p>
+          <p>
+            A major vernacular change also took hold during the Eisenhower years. Although the word “frosh” was first
+            mentioned in the ‘Prince’ <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19280604-01.2.20&srpos=1&e=------192-en-20-Princetonian-1--txt-txIN-frosh------">much
+              earlier</a> in the 20th century, its usage skyrocketed in the 1950s, alongside the similarly shortened
+            “soph.”
+          </p>
+          <p>
+            <em>Read more: <a
+                href="https://www.dailyprincetonian.com/article/2022/02/beginning-jewish-student-life-campus-princeton-einstein">Uncovering
+                the origins of Jewish community on campus</a></em>
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19580210-01&e=------195-en-20-Princetonian-41-byDA-txt-txIN-bicker----1958--">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1950s/1950_bicker.jpg">
+            </a>
+            <p class="caption">February 10, 1958</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19540225-01&e=------195-en-20-Princetonian-1--txt-txIN-communist------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1950s/1950_communist.jpg">
+            </a>
+            <p class="caption">February 25th, 1954</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19521022-01&e=------195-en-20-Princetonian-1--txt-txIN-eisenhower------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1950s/1950_truman.jpg">
+            </a>
+            <p class="caption">October 22nd, 1952</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1960">∙∙1960s∙∙</h1>
+        <div class="decade-text">
+          <p>
+            <em>Editor’s Note: A note on language: We included the word “negro” in our analyses because it provides an
+              important historical lens through which to view events like the 1960s Civil Rights Movement. We recognize
+              and respect that the term is offensive absent just historical context. (This note has been adapted from
+              the Pudding analysis that serves as the inspiration for this project.)</em>
+          </p>
+        </div>
+        <div class="graph-block-container" id="d1960">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            The 1960s saw a pivotal change to Princeton’s undergraduate population: coeducation. University Trustees
+            voted in favor of coeducation in <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19690113-01.2.8&srpos=5&e=-------en-20--1--txt-txIN-trustees+approve+coeducation------">January
+              1969</a>, following intense external and internal pressure. Less than a year after Yale’s decision to
+            become coeducational in <a
+              href="https://celebratewomen.yale.edu/history/timeline-women-yale#:~:text=November%201968,22%20colleges%20arrive%20on%20campus.">November
+              1968</a>, Princeton became coeducational in the fall of 1969.
+          </p>
+          <p>
+            In September 1969, Princeton’s first class of female students — <a
+              href="https://libguides.princeton.edu/c.php?g=84581&p=543232">101 female first-years and 70 female
+              transfer students</a> — joined the student body, resulting in a roughly <a
+              href="https://paw.princeton.edu/article/special-anniversary-when-princeton-opened-its-doors#:~:text=The%20ratio%20of%20men%20to,was%20at%20least%2020%E2%80%931.">20:1
+              male to female student ratio</a>. The introduction of women led to several logistical issues across
+            campus, including determining where to <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19691117-01.2.16&srpos=2&e=------196-en-20--1--txt-txIN-coeds------">house</a>
+            the women and offering eating clubs a <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19690918-01.2.3&srpos=20&e=------196-en-20--1--txt-txIN-coed------">temporary
+              plan</a> for feeding “co-eds”: charging a $20 registration fee to be applied to meals and requesting extra
+            if she eats more but refunding the difference if she eats less.
+          </p>
+          <p>
+            During the 1960s, the Civil Rights Movement shaped national conversations, a reality that was reflected in
+            an increase of reporting on racial issues in the ‘Prince,’ which printed articles discussing Black <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19631114-01.2.12&srpos=4&e=------196-en-20-Princetonian-1--txt-txIN-------">enrollment</a>
+            in the Ivy League and the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19671017-01.2.3&srpos=2&e=------196-en-20-Princetonian-1--txt-txIN-------">experience
+              of Black students</a> on campus. By 1967, there had been fewer than 100 Black undergraduates at Princeton
+            in the University’s history.
+          </p>
+          <p>
+            Gaining a bigger presence on campus, Undergraduate Student Government (USG)’s predecessor, the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19610927-01.2.8&srpos=4&e=------196-en-20--1--txt-txIN-ugc------">Undergraduate
+              Council</a>, initiated a series of weekly meetings, and the ​​Interclub Committee played a leading role in
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19670303-01.2.5&srpos=9&e=------196-en-20--1--txt-txIN-icc------">bicker
+              reform</a>. In response to and indeed in opposition to the Vietnam War, Princeton’s <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=TownTopics19680523-01.2.85&srpos=1&e=------196-en-20--1--txt-txIN-sds------">Students
+              for a Democratic Society</a> gained prominence during the 1960s, hosting marches, sit-ins, walk-outs, and
+            other protests.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19670421-01.2.12&srpos=8&e=------196-en-20-Princetonian-1--txt-txIN-civil-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1960s/1960_CivilRights.jpg">
+            </a>
+            <p class="caption">April 21st, 1967</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19671013-01.2.8&srpos=5&e=------196-en-20-Princetonian-1--txt-txIN-coeducation-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1960s/1960_CoedPoll.jpg">
+            </a>
+            <p class="caption">October 13th, 1967</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19690210-01.2.2&srpos=4&e=------196-en-20-Princetonian-1--txt-txIN-coeds-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1960s/1960_Snowchicks.jpg">
+            </a>
+            <p class="caption">February 10, 1969</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1970">∙∙1970s∙∙</h1>
+        <div class="graph-block-container" id="d1970">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            In the midst of <a href="https://www.federalreservehistory.org/essays/great-inflation">the Great
+              Inflation</a> and a national energy crisis, Princeton faced budget problems in the 1970s — prompting the
+            University to raise tuition by nearly 50 percent between 1969 and 1973, a rise notable enough to make <a
+              href="https://www.nytimes.com/1973/02/19/archives/princeton-raising-tuition-again-and-it-sees-no-end-to-increases.html#:~:text=The%20university%27s%20board%20of%20trustees,tuition%20from%20%243%2C150%20to%20%243%2C400">national
+              news</a>.
+          </p>
+          <p>
+            The ROTC program at Princeton also faced significant changes. In 1970, in the wake of protests against the
+            war in Vietnam, including a <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19700502-01.2.5&srpos=16&e=------197-en-20--1--txt-txIN-rotc----1970--">fire-bombing</a>
+            of the Princeton Armory ROTC offices, faculty voted to <a
+              href="https://www.nytimes.com/1970/06/20/archives/princeton-trustees-agree-to-end-rotc-in-72.html">end the
+              program</a>. This suspension only lasted a year, ending when the student body passed a referendum
+            recommending the return of ROTC as a “non-credit” activity, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19710401-01.2.10&srpos=16&e=------197-en-20--1--txt-txIN-rotc----1971--">the
+              very first use</a> of the USG referendum procedure.
+          </p>
+          <p>
+            In 1969, East Asian Studies and Near Eastern Studies, <a
+              href="https://eas.princeton.edu/history-department#:~:text=East%20Asian%20Studies%20at%20Princeton,lacking%20an%20East%20Asian%20component.">previously
+              one department</a>, were split and moved into Jones Hall. Prior to this move, Jones Hall was known as <a
+              href="https://www.princetonianamuseum.org/artifact/db53d203-77e9-4df2-875e-59bb180c11bd#:~:text=It%20was%20originally%20named%20in,Asian%20and%20Near%20Eastern%20Studies.">Fine
+              Hall</a>. The building’s previous tenant, the math department, was moved to a newly constructed building
+            on Washington Road. This new Fine Hall stood at <a
+              href="https://www.princetonianamuseum.org/artifact/80804cbc-2146-4bad-913c-12a3569d090d#:~:text=Fine%20Hall%20comprises%20a%20long,underground%20joint%20mathematics%2Dphysics%20library">13
+              stories</a> and was described by the ‘Prince’ as Princeton’s “<a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19720602-01.2.22&srpos=2&e=------197-en-20-Princetonian-1--txt-txIN-%22bonafide+skyscraper%22------">first
+              bonafide skyscraper</a>.”
+          </p>
+          <p>
+            The word “Jadwin” also saw disproportionate usage throughout the 1970s, oftentimes in reference to Jadwin
+            Gymnasium which <a href="https://en.wikipedia.org/wiki/Jadwin_Gymnasium">opened in 1969</a>.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19750207-01.1.5&e=------197-en-20-Princetonian-1--txt-txIN-%22fine+hall%22-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1970s/1970_fine.jpg">
+            </a>
+            <p class="caption">February 7th, 1975</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19700504-01&e=------197-en-20--1--txt-txIN-anti%252Dwar-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1970s/1970_rotc.jpg">
+            </a>
+            <p class="caption">May 4th, 1970</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19700620-01.2.69&srpos=1&e=------197-en-20-Princetonian-1--txt-txIN-%22swish+of+a+skirt%22-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1970s/1970_women.jpg">
+            </a>
+            <p class="caption">June 20th, 1970</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1980">∙∙1980s∙∙</h1>
+        <div class="graph-block-container" id="d1980">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            Following the 1980s’ <a
+              href="https://www.techlearning.com/resources/in-the-1980s-it-was-all-about-the-software">growth of
+              computer usage in schools</a>, computers starred in many newspaper articles. In the summer of 1980, the
+            University announced that it would be offering its first introductory computer science course geared towards
+            humanities majors: <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19800728-01.2.145&srpos=1&e=------198-en-20-Princetonian-1--txt-txIN-computer------">EECS
+              103</a>. Princeton strove to make computer usage accessible to students by providing computer facilities
+            on campus, though some computers were reported to be <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19881017-01.2.8&srpos=8&e=------198-en-20-Princetonian-1--txt-txIN-computer------">stolen</a>
+            from such clusters.
+          </p>
+          <p>
+            The 1980s’ increase in court cases addressing sexual harassment — and the landmark decision of <a
+              href="https://www.washingtonpost.com/outlook/2019/06/19/how-supreme-court-made-sexual-harassment-cases-more-difficult-win/">Meritor
+              Savings Bank v. Vinson</a> (1986) where the Supreme Court ruled that sexual harassment violates the Civil
+            Rights Act — sparked conversations nationwide. The spike in reporting on harassment, including coverage on
+            <a href="https://time.com/4286575/sexual-harassment-before-anita-hill/">major incidents of harassment at
+              peer instituitions</a>, prompted the University to revise sexual harassment policies and host <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19870406-01.2.4&srpos=5&e=-------en-20-Princetonian-1--txt-txIN-harassment------">sexual
+              harassment trainings</a>.
+          </p>
+          <p>
+            On campus, the Undergraduate Student Government (USG) became increasingly visible, hosting frequent <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19800422-01.2.9&srpos=2&e=------198-en-20-Princetonian-1--txt-txIN-forum------">forums</a>
+            to allow members of the campus community to voice their opinions. At the start of the 1980s, the University
+            established the <a href="https://pr.princeton.edu/home/03/1229_rocky/hmcap.html">residential college
+              system</a>, which originated from Woodrow Wilson’s 1906 “<a
+              href="https://butlercollege.princeton.edu/about/history#:~:text=Construction%20of%20the%20colleges%20began,open%20its%20doors.%20Lee%20D.">Quad
+              Plan</a>” and would later become an integral part of Princeton’s campus life and undergraduate
+            experience.<br>
+          </p>
+          <p>
+            In <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19870527-01.2.4&srpos=3&e=------198-en-20--1--txt-txIN-frank------">1979</a>,
+            <a href="https://en.wikipedia.org/wiki/Sally_Frank">Sally Frank </a>’80 fought for <a
+              href="https://paw.princeton.edu/inbox/appreciation-sally-frank-80">gender equality</a> when she sued the
+            three remaining all-male eating clubs: Cottage Club, Ivy Club, and Tiger Inn (TI). Although pushback
+            persisted from Ivy and TI, Cottage became coed in 1986, and Frank donated $2,000 of her <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19860307-01.2.4&srpos=1&e=------198-en-20--1--txt-txIN-frank------">$20,000
+              settlement</a> with the club to Princeton’s <a href="https://odi.princeton.edu/centers/womens">Women*s
+              Center</a>. In 1989, the New Jersey Supreme Court agreed to hear Frank’s case, and shortly after, both Ivy
+            and TI voted to accept women in <a
+              href="https://projects.dailyprincetonian.com/how-the-eating-clubs-went-coed/#:~:text=On%20February%2013%2C%201990%2C%20Ivy,members%20voted%20the%20same%20way.">February
+              of 1990</a>.
+          </p>
+          <p>
+            <em>Read more: <a
+                href="https://projects.dailyprincetonian.com/how-the-eating-clubs-went-coed/#:~:text=On%20February%2013%2C%201990%2C%20Ivy,members%20voted%20the%20same%20way.">How
+                the Eating Clubs Went Co-Ed</a> </em>
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19890209-01.2.6&srpos=5&e=------198-en-20-Princetonian-1--txt-txIN-computer------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1980s/1980_Computer.jpg">
+            </a>
+            <p class="caption">February 9th, 1989</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19870406-01.2.4&srpos=1&e=------198-en-20-Princetonian-1--txt-txIN-harassment-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1980s/1980_Harassment.jpg">
+            </a>
+            <p class="caption">April 6th, 1987</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19871210-01.2.14&srpos=8&e=------198-en-20-Princetonian-1--txt-txIN-residential-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1980s/1980_ResCollege.jpg">
+            </a>
+            <p class="caption">December 10th, 1987</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b1990">∙∙1990s∙∙</h1>
+        <div class="graph-block-container" id="d1990">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            During the Clinton years, as many American politicians were growing increasingly interested in <a
+              href="https://time.com/6169294/climate-change-politicized-in-1990s/">environmentalism</a>, use of the word
+            “environmental” skyrocketed at the ‘Prince.’ Student-led environmental groups began <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19910114-01.2.22&srpos=5&e=------199-en-20-Princetonian-1--txt-txIN-environmental------">new
+              publications</a>, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19950208-01.2.10&srpos=4&e=------199-en-20-Princetonian-1--txt-txIN-environmental------">released
+              studies</a>, and campaigned for <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19940223-01.2.3&srpos=10&e=------199-en-20-Princetonian-1--txt-txIN-environmental------">sustainable
+              reforms</a> on campus. The University also founded the Princeton Environmental Institute in 1994, now
+            known as the <a href="https://environment.princeton.edu/about/#mis">High Meadows Environmental
+              Institute</a>.
+          </p>
+          <p>
+            Other frequently used terms in the decade referred to the worldwide AIDS epidemic: By 1994, the disease was
+            the <a
+              href="https://www.apa.org/pi/aids/youth/nineties-timeline#:~:text=The%20Epidemic%20Grows&text=By%201994%2C%20AIDS%20became%20the,ages%2025%2D44%20years%20old.&text=In%201997%2C%20UNAIDS%20estimated%20that,newly%20infected%20with%20the%20virus.">leading
+              cause of death</a> in Americans between the age of 25 and 44. Throughout the 1990s, Princeton hosted
+            ​​events for annual world <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19930408-01.2.3&srpos=1&e=-------en-20--1--txt-txIN-aids+awareness------">AIDS
+              awareness week</a>, and editorials in the ‘Prince’ stressed the urgency of fighting the pandemic, calling
+            it “perhaps <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19920921-01.2.16&srpos=13&e=------199-en-20-Princetonian-1--txt-txIN-aids------">the
+              defining plague</a> of our time.”
+          </p>
+          <p>
+            In sports-related coverage, volleyball became a <a
+              href="https://goprincetontigers.com/news/2014/2/25/209417582">varsity sport at Princeton</a> in 1997, and
+            the softball team became the first Ivy team to post <a
+              href="https://goprincetontigers.com/sports/2016/6/16/softball-coaching-records-program-facts.aspx">12
+              league victories</a>.
+          </p>
+          <p>
+            The word “machine” was also used disproportionately throughout the 1990s, referring to, among other things,
+            The Daily Princetonian’s <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19940308-01.2.16&srpos=20&e=------199-en-20-Princetonian-1--txt-txIN-%22fax+machine%22------">fax
+              machine</a> number. At the time, some students even had their own <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19930927-01.2.2&srpos=1&e=------199-en-20-Princetonian-1--txt-txIN-%22fax+machine%22------">personal
+              facsimile machines</a>, “the ultimate in student high-tech gadgetry.”
+          </p>
+          <p>
+            The ‘Prince’ also disproportionately mentioned the word “television” during the ’90s. By 1995, about <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19950214-01.2.9&srpos=1&e=------199-en-20-Princetonian-1--txt-txIN-%22television%22------">50
+              percent of dorm rooms</a> were wired for cable, although underclassmen in residential colleges were not
+            allowed to subscribe, forcing first-years and sophomores to rely on communal televisions to stay up-to-date
+            on shows like “<a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19980109-01.2.17&srpos=7&e=------199-en-20-Princetonian-1--txt-txIN-seinfeld------">Seinfeld</a>”
+            and “<a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19920115-01.2.9&srpos=1&e=------199-en-20-Princetonian-1--txt-txIN-90210------">90210</a>,”
+            released one night a week.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19910329-01&e=------199-en-20-Princetonian-1--txt-txIN-environmental-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1990s/1990_environmental.jpg">
+            </a>
+            <p class="caption">March 29th, 1991</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19971202-01.1.11&e=------199-en-20-Princetonian-1--txt-txIN-volleyball-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1990s/1990_volleyball.jpg">
+            </a>
+            <p class="caption">December 2nd, 1997</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19930408-01&e=-------en-20--1--txt-txIN-aids+awareness------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/1990s/1990_aids2.jpg">
+            </a>
+            <p class="caption">April 8th, 1993</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b2000">∙∙2000s∙∙</h1>
+        <div class="graph-block-container" id="d2000">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            In 2001, Princeton became the nation’s first university to implement a <a
+              href="https://www.princeton.edu/news/2021/01/28/princetons-pioneering-financial-aid-program-has-benefitted-10000-students-over-last">“no
+              loan” financial aid program</a>: a pioneering decision that helped students graduate debt-free and
+            inspired institutions across the country to do the same. The following year, the University announced that
+            for the first time in Princeton’s history, <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20020912-01.2.4&srpos=10&e=------200-en-20-Princetonian-1--txt-txIN-aid------">50
+              percent</a> of the first-years received financial aid. For the next two decades, Princeton’s <a
+              href="https://www.dailyprincetonian.com/article/2022/02/princeton-financial-aid-trends-ivy-league-colleges-data">financial
+              aid packages</a> would go on to benefit over <a
+              href="https://www.princeton.edu/news/2021/01/28/princetons-pioneering-financial-aid-program-has-benefitted-10000-students-over-last">10,000
+              students</a>.
+          </p>
+          <p>
+            In the years leading up to and at the turn of the 21st century, the ‘Prince’ reported more on drinking
+            culture on campus, including the eating clubs’ role in fostering a <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20030313-01.2.10.2&srpos=6&e=------200-en-20--1--txt-txIN-drinking------">safer
+              environment for college drinking</a> compared to unsupervised, underage drinking. <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20080915-01.2.19.1&srpos=4&e=-------en-20--1--txt-txIN-Amethyst+Initiative+petition------">The
+              Amethyst Initiative</a> petition, introduced by then Middlebury College President John McCardell,
+            advocated lowering the drinking age to 18. While some presidents of peer institutions supported the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20080923-01.2.7&srpos=1&e=-------en-20--1--txt-txIN-Amethyst+Initiative+petition------">petition</a>,
+            then-President Shirley Tilghman did not see high potential in its success or certainty in its outcomes.
+          </p>
+          <p>
+            Colloquial terms such as “guys” and “girls” were disproportionately used during this century, especially in
+            more playful sections of the newspaper, such as <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20040408-02.2.4&srpos=4&e=------200-en-20-Princetonian-1--txt-txIN-guys------">Kiss
+              & Tell</a> and <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20080327-02.2.14&srpos=10&e=------200-en-20-Princetonian-1--txt-txIN-street%27s+top+ten------">Street’s
+              Top Ten</a>. Top Ten was a popular section among readers in the 2000s that aligned with the weekly issue’s
+            theme, synthesizing reader submissions and exploring a variety of fun, random topics such as the top 10 <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20081113-02.2.14&srpos=6&e=------200-en-20-Princetonian-1--txt-txIN-street%27s+top+ten------">theme
+              songs for buildings on campus</a> and the top 10 <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20060302-02.2.14&srpos=3&e=------200-en-20-Princetonian-1--txt-txIN-guys------">chick
+              flicks guys actually like</a>.
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20030313-01.2.10.2&srpos=6&e=------200-en-20--1--txt-txIN-drinking------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/2000s/2000_SaferDrinking.jpg">
+            </a>
+            <p class="caption">March 13th, 2003</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20090410-01.2.2&srpos=5&e=------200-en-20--1--txt-txIN-drinking------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/2000s/2000_Drinking.jpg">
+            </a>
+            <p class="caption">April 10th, 2009</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20080327-02.2.14&srpos=10&e=------200-en-20-Princetonian-1--txt-txIN-street%27s+top+ten------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/2000s/2000_StreetsTopTen.jpg">
+            </a>
+            <p class="caption">March 27th, 2008</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="b2010">∙∙2010s∙∙</h1>
+        <div class="graph-block-container" id="d2010">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud"></div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            The rise of social media in the 2010s transformed life at Princeton and beyond. For the first time, entire
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20150413-01.2.8&srpos=4&e=------201-en-20-Princetonian-1--txt-txIN-alumni+facebook------">classes
+              of alumni</a> could stay in touch on Facebook, sparking more than a few controversies. Online <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20151030-01.2.6&srpos=113&e=------201-en-20-Princetonian-101--txt-txIN-facebook------">confessions
+              pages</a> allowed any student to anonymously share their experiences at Princeton.
+          </p>
+          <p>
+            The University itself began using Facebook and Twitter to help reach current and potential students. In
+            February 2010, Princeton University had about 11,000 Facebook fans, “<a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20100212-01.2.12&srpos=19&e=------201-en-20-Princetonian-1--txt-txIN-facebook------">991
+              times less popular</a> than Michael Jackson.” The ‘Prince’ also started to cultivate a social media
+            following, urging our readers to “<a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20151002-01.2.13.1&srpos=42&e=------201-en-20-Princetonian-41--txt-txIN-facebook------">procrastinate
+              productively</a>” by liking <a href="https://www.facebook.com/DailyPrincetonian/">our Facebook page</a>.
+          </p>
+          <p>
+            The Black Justice League, a student group dedicated to fighting anti-Black racism, was founded in the <a
+              href="https://www.dailyprincetonian.com/article/2020/07/black-justice-league-princeton-history-2015-protest-nassau-hall-sit-in">fall
+              of 2014</a> as racial justice uprisings swept the nation. A year later, the group orchestrated a march on
+            Nassau Hall, calling on the University to create affinity spaces for Black students, mandate cultural
+            competency training for faculty, and remove Woodrow Wilson Class of 1879’s name from Princeton’s policy
+            school and first residential college, among other demands.
+          </p>
+          <p>
+            The ‘Prince’ also disproportionately used “assault” and “violence” throughout the decade, reporting on <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20150221-01.2.6&srpos=19&e=------201-en-20--1--txt-txIN-sexual------">misconduct</a>
+            and giving a space for <a
+              href="https://www.dailyprincetonian.com/article/2014/04/rape-culture-exists-here-too">survivors</a> to
+            share their stories publically. In order to promote sexual health on campus, The <a
+              href="https://www.dailyprincetonian.com/staff/the-sexpert">Sexpert</a>, a moniker for a team of peer
+            health educators, also wrote prolifically in the 2010s — answering questions on everything from <a
+              href="https://www.dailyprincetonian.com/article/2015/10/ask-the-sexpert-circumcised-vs-uncircumcised">circumcision</a>
+            to <a href="https://www.dailyprincetonian.com/article/2019/12/sexpert-female-ejaculation">female
+              ejaculation</a>.
+          </p>
+          <p>
+            During the 2010s, the Princeton student body considered several different referendums on topics including <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20131014-01.2.6&srpos=120&e=------201-en-20-Princetonian-101--txt-txIN-referendum------">USG
+              reform</a>, <a href="https://paw.princeton.edu/article/referendum-bicker">bicker</a>, and the use of <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20101129-01.2.6&srpos=5&e=------201-en-20-Princetonian-1--txt-txIN-hummus------">Sabra
+              hummus</a> in dining halls, as some students pushed for divestment from the Israeli brand. An annual,
+            University-wide <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20130225-01.2.10&srpos=8&e=------201-en-20-Princetonian-1-byDA-txt-txIN-%22mental+health+initiative%22------">Mental
+              Health Week</a> also began during the decade, sponsored by the newly formed USG <a
+              href="https://www.dailyprincetonian.com/article/2012/03/usg-evaluates-recent-mental-health-initiative-and-newest-tigerapp">Mental
+              Health Initiative</a>.
+          </p>
+          <p>
+            <em>Read more: <a
+                href="https://www.dailyprincetonian.com/article/2020/07/black-justice-league-princeton-history-2015-protest-nassau-hall-sit-in">A
+                look back at the Black Justice League’s campus activism</a></em>
+          </p>
+        </div>
+        <div class="image-block">
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20130913-01&e=------201-en-20-Princetonian-1--txt-txIN-diversity-ILLUSTRATION-----">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/2010s/2010_diversity.jpg">
+            </a>
+            <p class="caption">September 13th, 2013</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20151119-01&e=------189-en-20--1--txt-txIN-%22student+protestors+organize+walkout%22------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/2010s/2010_bjl2.jpg">
+            </a>
+            <p class="caption">November 19th, 2015</p>
+          </div>
+          <div class="image-block-container">
+            <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20151030-01.2.6&srpos=113&e=------201-en-20-Princetonian-101--txt-txIN-facebook------">
+              <img
+                src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings/2010s/2010_facebook.jpg">
+            </a>
+            <p class="caption">November 30th, 2015</p>
+          </div>
+        </div>
+      </div>
+      <div class="decade">
+        <h1 class="decade-header" id="bExplore">∙∙Explore∙∙</h1>
+        <div class="graph-block-container" id="dlookup">
+          <div class="graph-block">
+            <div class="mountain-block">
+              <p class="chart-header"></p>
+              <p class="chart-header"></p>
+              <div class="mountain-chart"></div>
+              <p class="chart-title">Decade</p>
+            </div>
+            <div class="word-cloud">
+              <form>
+                <label for="fname" style="color:#F8F4EA">Term</label><br>
+                <input type="text" id="fname" name="fname" class="lookupText"><br>
+                <input type="submit" class="lookupSubmit">
+                <br><br>
+                <p class="error-msg"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="decade-text">
+          <p>
+            This tool is case insensitive and best used for searching single words, not phrases with spaces. A more
+            advanced search tool can be found on the <a
+              href="https://theprince.princeton.edu/princetonperiodicals/?a=q&hs=1&r=1&results=1&txq=&dafdq=&dafmq=&dafyq=&datdq=&datmq=&datyq=&puq=&txf=txIN&ssnip=txt&e=-">Princeton
+              University Library website</a>.
+          </p>
+          <p>
+            For more information on the data sources used to generate these charts, you can read our methodology
+            section below.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="intro-text" id="methodology">
+    <h1>
+      <strong>Methodology</strong>
+    </h1>
+    <br>
+    <p>
+      <strong>Data Sources</strong>
+    </p>
+    <p>
+      The data used in our analysis for all years proceeding 2015 was sourced directly from Mudd Library, which shared
+      with the ‘Prince’ a database containing optical character recognition (OCR) data from the Larry Dupraz archive. We
+      did not independently verify this database against the raw image data in the archive or Princeton University
+      Library’s archive explorer. For years succeeding 2015, the ‘Prince’ used data from internal web archives.
+    </p>
+    <p>
+      <strong>Data Cleaning</strong>
+    </p>
+    <p>
+      We first removed all tokens of the form ’xx to prevent class year attributions from dominating frequency analysis.
+      We removed all capitalization and punctuation in order to ensure that errors in OCR, which can frequently
+      miscaptialize letters or insert unnecessary punctuation, would not prevent terms from being recognized. This means
+      that all emblematic terms are not case sensitive, e.g. tokens like “princeton,” “Princeton,” “pRinceton” are all
+      recognized as the same term.
+    </p>
+    <p>
+      <strong>Term Extraction</strong>
+    </p>
+    <p>
+      The ‘Prince’ used a whitespace tokenizer to count word frequencies for each decade. Then, for each analyzed
+      decade, we compared the frequency of all terms in that decade against a corpus containing data for that decade and
+      the preceding and following decades. For the 2010s and 1880s, we used the single neighboring decade. Like <a
+        href="https://pudding.cool/2018/12/brief-history/">The Pudding</a>, we only included words that were used at
+      least once in 10,000 words in each decade to ensure the relevancy of analyzed terms. Using each decade’s list of
+      disproportionately used words, we then searched the archives to find historically and culturally relevant uses of
+      those words to share in the summaries.
+    </p>
+    <br>
+    <div><h2 style = "text-align: center;">***</h2></div>
+    <br>
+    <p>
+      <em>Anika Maskara is a Head Web Design and Development Editor and a Staff Data Reporter focused on digital
+        storytelling and interactive visualization. She is a senior and can be reached at amaskara@princeton.edu or on
+        Instagram @anikamaskara.</em>
+    </p>
+    <p>
+      <em>Elaine Huang is an Assistant Data Editor for The Daily Princetonian. She is a sophomore concentrating in
+        Operations Research and Financial Engineering (ORFE) and can be reached at eh0313@princeton.edu.</em>
+    </p>
+  </div>
+</body>
+
+<script type="module" src="script.js"></script>
+<script type="module" src="nav.js"></script>
+
+</html>
