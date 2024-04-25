@@ -166,9 +166,9 @@ let margin2 = { top: 10, right: 10, bottom: 10, left: 10 },
     height2 = 300 - margin2.top - margin2.bottom;
 
 // initialize the word clouds, there's probably a way to do this without a for loop
-for (let decade in wordCloudDict) {
+for (let word in wordCloudDict) {
     // append the svg object to the body of the page
-    let cloud = d3.select("#d" + decade).select(".word-cloud").append("svg")
+    let cloud = d3.select("#d" + word).select(".word-cloud").append("svg")
         .attr("viewBox", "0 0 " + (width2 + margin2.left + margin2.right) + " " + (height2 + margin2.top + margin2.bottom))
         .append("g")
         .attr("transform",
@@ -178,7 +178,7 @@ for (let decade in wordCloudDict) {
     // Wordcloud features that are different from one word to the other must be here
     let layout = d3.layout.cloud()
         .size([width2, height2])
-        .words(wordCloudDict[decade].map(function (d) { return { text: d.word, size: d.size * 2 }; }))
+        .words(wordCloudDict[word].map(function (d) { return { text: d.word, size: d.size * 2 }; }))
         .padding(10)        //space between words
         .rotate(0)       // rotation angle in degrees
         .fontSize(function (d) { return d.size; })      // font size of words
@@ -251,7 +251,7 @@ d3.csv("https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-
         .append("path")
         .datum(data)
         .attr("d", d3.area()
-            .x(function (d) { return x(+d.timedecade) })
+            .x(function (d) { return x(+d.timeword) })
             .y0(height)
             .y1(function (d) { return y(+d.the * 10) })
         )
@@ -261,24 +261,24 @@ d3.csv("https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-
         .style("fill", myColor)
 
     // A function that update the chart
-    function update(button, selectedGroup, selectedDecade) {
-        d3.select("#" + selectedDecade).select(".word-cloud").select(".selected").classed("selected",false);
-        // selected the right chart elements for the decade
-        let selectedSvg = d3.select("#" + selectedDecade).select(".mountain-chart svg g");
+    function update(button, selectedGroup, selectedword) {
+        d3.select("#" + selectedword).select(".word-cloud").select(".selected").classed("selected",false);
+        // selected the right chart elements for the word
+        let selectedSvg = d3.select("#" + selectedword).select(".mountain-chart svg g");
         let selectedLine = selectedSvg.select(".line");
 
         // Create new data with the selection?
-        let dataFilter = data.map(function (d) { return { time: d.timedecade, value: d[selectedGroup] } })
+        let dataFilter = data.map(function (d) { return { time: d.timeword, value: d[selectedGroup] } })
 
     
         if(typeof dataFilter[0]['value'] == 'undefined') {
-            d3.select("#" + selectedDecade).select(".error-msg")
+            d3.select("#" + selectedword).select(".error-msg")
             .text("\“" + selectedGroup + "\” was not included in our analysis because it was either not used frequently enough to be included in our analysis or was removed during data cleaning. If you're interested in seeing its usage over time, you can use the Princeton University Library Archive explorer.")
             .style("color", myColor)
             return false;
         }
        
-        d3.select("#" + selectedDecade).select(".error-msg")
+        d3.select("#" + selectedword).select(".error-msg")
         .text("")
 
         y.domain([0, d3.max(data, function (d) {
@@ -302,7 +302,7 @@ d3.csv("https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-
             .attr("stroke", function (d) { return myColor })
 
         // update the chart header
-        d3.select("#" + selectedDecade).select(".chart-header")
+        d3.select("#" + selectedword).select(".chart-header")
             .text("Frequency of \“" + selectedGroup + "\” over time")
             .attr("style", "color: #F8F4EA")
             var axisLabelX = 50;
@@ -319,11 +319,11 @@ d3.csv("https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-
         // recover the option that has been chosen
         let selectedWord = d3.select(this).text().toLowerCase().replace(/[^A-Za-z0-9]/g,"");
         // get id of container
-        let selectedDecade = this.closest('.graph-block-container').id
+        let selectedword = this.closest('.graph-block-container').id
 
 
         // run the updateChart function with this selected option
-        update(this, selectedWord, selectedDecade)
+        update(this, selectedWord, selectedword)
     })
 
     d3.select(".lookupSubmit").on("click", function (d) {
@@ -332,21 +332,21 @@ d3.csv("https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-
 
         let selectedWord = d3.select(".lookupText").property("value").toLowerCase().replace(/[^A-Za-z0-9]/g,"");
         // get id of container
-        let selectedDecade = this.closest('.graph-block-container').id
+        let selectedword = this.closest('.graph-block-container').id
         // run the updateChart function with this selected option
-        update(this, selectedWord, selectedDecade)
+        update(this, selectedWord, selectedword)
     })
 
     // VERY HACKY way to intialize all the mountain charts to the first word
-    for(let decade in wordCloudDict){
-        let word = wordCloudDict[decade][0]['word']
-        let element = d3.select("#d" + decade)
+    for(let word in wordCloudDict){
+        let word = wordCloudDict[word][0]['word']
+        let element = d3.select("#d" + word)
                         .select(".word-cloud")
                         .selectAll(".selectButton")
                         .filter(function(){ 
                             return d3.select(this).text() == word
                         })
-        update(element.node(), word.toLowerCase(), "d" + decade)
+        update(element.node(), word.toLowerCase(), "d" + word)
     }
     update(d3.select(".lookupSubmit").node(), "princetonian", "dlookup")
 })
