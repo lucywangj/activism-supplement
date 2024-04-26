@@ -1,55 +1,34 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- usually this can just be the headline, but check in -->
-  <title>Activism in Princeton History</title>
-  <!-- 
-        CHANGE THIS! "preview-img.png" defines what the preview image will be for 
-        links and social media, so be sure to change this to whatever the
-        dominant media will be
-    -->
-  <meta property="og:image"
-    content="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/dommedia-01.png">
+    <title>Activism: the 'Prince's coverage over the years</title>
+    <meta name="description" content="The Daily Princetonian analyzed its archives to uncover the history and trends behind activism on campus since 1876.">
 
-  <!--
-        CHANGE THIS! Make the content something meaningful to the article
-        (reach out to editor for suggestions if needed)
-    -->
-  <meta property=“og:description”
-    content="At The Daily Princetonian, we’re used to focusing on the present — reporting on stories that unfold as we write.
+    <!-- Social media embed contents. ⚠️ FILL IN SQUARE BRACKETS. ⚠️ -->
+    <meta property="og:url" content="https://projects.dailyprincetonian.com/activism-archive-project">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Activism: the 'Prince's coverage over the years">
+    <meta property="og:description" content="The Daily Princetonian analyzed its archives to uncover the history and trends behind activism on campus since 1876.">
+    <meta property="og:image" content="⚠️ [PREVIEW IMAGE] ⚠️">
+    <meta name="twitter:card" content="summary_large_image">
 
-  With this project, we at the ‘Prince’, the second-oldest college newspaper in the country, took a step back. Leveraging data from the The Daily Princetonian Larry Dupraz Archives, kindly shared with us by Mudd Library, we immersed ourselves in words worth of print publications in the hope of better understanding the journey the ‘Prince’ and the University have been on over the past 140 years." />
+    <!-- Defines standard character set. Useful for ensuring curly quotes
+        aren't corrupted by different encodings. -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <!-- defines standard character set—useful for ensuring curly quotes
-      aren't corrupted by different encodings -->
+    <!-- Ensures mobile layout works. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Link to our logo for favicon. -->
+    <link rel="icon" type="image/png"
+          href="https://dirgyzwl2hnqq.cloudfront.net/ff9419fb986f760c1b0b24d4b9046051/dist/img/favicons/apple-icon-57x57.png"/>
 
+    <!-- A reference to our brand fonts. -->
+    <link rel="stylesheet" href="https://use.typekit.net/gkx8zdh.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kha5kwj.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mhl8zjo.css">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/static.getsnworks.com/fontawesome/5.15.2/css/all.min.css">
 
-  <!-- ensures mobile layout works-->
-  <meta name="viewport" content="width=device-width">
-
-
-  <!-- link to our logo for favicon -->
-  <link rel="icon" type="image/png"
-    href="https://dirgyzwl2hnqq.cloudfront.net/ff9419fb986f760c1b0b24d4b9046051/dist/img/favicons/apple-icon-57x57.png" />
-
-  <!-- Global site tag (gtag.js) - Google Analytics COMMENT OUT UNTIL PUB -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0QFG1LJXS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-H0QFG1LJXS');
-  </script>
-  <!--/site tag-->
-
-  <!-- 
-        a reference to our brand fonts (if there's any Adobe font not 
-        available on the stylesheet, let the head digital news 
-        editor know and it can be added) 
-    -->
   <link rel="stylesheet" href="https://use.typekit.net/gkx8zdh.css">
 
   <!-- reference to your CSS -->
@@ -59,84 +38,98 @@
   <!-- Load d3.js -->
   <script src="https://d3js.org/d3.v4.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+  <script type="module" src="cloud-script.js"></script>
+  <script type="module" src="navbar.js"></script>
+  <script type="module" src="script.js"></script>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
   </script>
-  <!-- smooth scrolling -->
   <script>
     $(document).ready(function () {
-      // Add smooth scrolling to all links
-      $("a").on('click', function (event) {
+    // Add smooth scrolling to all links
+    $("a").on('click', function (event) {
 
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
 
-          // Store hash
-          var hash = this.hash;
+        // Store hash
+        var hash = this.hash;
 
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function () {
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
 
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
     });
+  });
   </script>
-
-  <base target="_blank">.
-
+    <!-- Global site tag for Google Analytics. LEAVE COMMENTED OUT UNTIL PUBLISHED
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0QFG1LJXS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-H0QFG1LJXS');
+    </script> -->
 </head>
-
 <body>
   <!-- Content goes here -->
-
-  <nav id="top-nav">
-    <span>
-      <a href="https://dailyprincetonian.com">
-        <img class="logo" alt="The Daily Princetonian logo"
-          src="https://dirgyzwl2hnqq.cloudfront.net/8ab5ccf6483af37484451354a9d9e4e3/dist/img/prince_logo_6-20-2020.svg" /></a>
-      <!-- "https://dirgyzwl2hnqq.cloudfront.net/8ab5ccf6483af37484451354a9d9e4e3/dist/img/prince_logo_scrolled.png"  -->
-      <a href="#coverimage" style="text-decoration: none;"><span class="project-name">&ensp;|&ensp;Activism in Princeton History</span>
-    </span></a>
-
-  </nav>
   <!-- <input type="text" id="selectButton">  -->
+  <nav id="top-nav">
+        <!-- Optional hamburger menu. Remove this i tag if your project doesn't have header navigation -->
+        <i style="color: white;" class="fas fa-bars" id="menu-icon"></i>
+        <div id="left-top-nav">
+			<a href="https://dailyprincetonian.com">
+				<img id="logo" alt="The Daily Princetonian logo"
+					 src="https://dirgyzwl2hnqq.cloudfront.net/8ab5ccf6483af37484451354a9d9e4e3/dist/img/prince_logo_scrolled.png"/>
+			</a>
+			<div class="project-name"><a href="article">&ensp;|&ensp;Activism: the 'Prince's coverage over the years</a></div>
+		</div>
+	</nav>
+  <article>
+
   <div class="intro">
     <div class="headline">
       <p class="overline"><strong>PROJECTS</strong><br></p>
-      <h1><span class="years">ACTIVISM</span><br>in Princeton History</h1>
-      <p class="underline"><em>as told by The Daily Princetonian archives</em></p>
-      <p class="byline">By _______</p>
+      <h1><span class="years">ACTIVISM</span><br></h1>
+      <h1>the 'Prince's coverage over the years</h1>
+      <!-- <p class="underline"><em>as told by The Daily Princetonian archives</em></p> -->
+      <!-- <p class="byline">By _______</p> -->
     </div>
-    <img
-      src="https://assets.dailyprincetonian.com/projects.dailyprincetonian.com/140-years-prince-history/clippings-01.png">
+    <div class="word-cloud" id="wordCloud">
+      <!-- Words will be dynamically added here -->
+    </div>
   </div>
   <div class="intro-text">
     <p>
-      <strong>At The Daily Princetonian</strong>, this is the intro!
+      From <a href="https://www.dailyprincetonian.com/article/2023/11/princeton-features-retrospective-student-protests-for-divestiture-from-south-africa">
+      protests</a> against South African Apartheid to <a href="https://www.dailyprincetonian.com/article/2015/11/students-walkout-and-speakout-occupy-nassau-hall-until-demands-of-black-justice-league-are-met">
+      organizing</a> for a cultural and difference requirement, Princeton has had a long and storied history of activism on its campus. 
+      Throughout these protests for social change, The Daily Princetonian has provided coverage of these moments 
+      for the campus community and the wider world.
     </p>
     <p>
-      [INSERT OTHER TEXT HERE!]
-    </p>
-    <p>
-      <em>Cover Art and Web Design by _____</em>
-    </p>
-    <p>
-      <em>Copy editing by ____</em>
+      While today, student activists protest about the Israel-Gaza conflict, climate justice, and graduate student 
+      and faculty and staff pay, what issues have captivated students in the past? We looked at how the ‘Prince’ has 
+      covered activism since the 1870s by tracking the incidence of articles with key words relating to activism appearing 
+      within articles, from “divest” to “demonstration.” 
     </p>
   </div>
 
+
   <!-- Create a div where the graph will take place -->
   <div class="content">
-    <nav id="navigation">
+	<!-- Template for the header. -->
+
+      <nav id="navigation">
       <div class="nav-wrapper">
         <ul>
           <li><a href="#bjustice"><u>justice</u></a></li>
@@ -151,223 +144,322 @@
         </ul>
       </div>
     </nav>
-
     <div class="words">
       <div class="word">
-        <h1 class="word-header" id="#bjustice">∙∙JUSTICE∙∙</h1>
+        <h1 class="word-header" id="bjustice">JUSTICE</h1>
         <div class="graph-block-container" id="djustice">
           <div class="graph-block">
             <div class="mountain-block">
-              <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/justice.svg">
+              </div>
             </div>
           </div>
+        </div>
+
           <div class="word-text">
             <p>
-              INSERT TEXT ABOUT 'JUSTICE' HERE!
+              The use of “justice” has fluctuated in waves, peaking in the 1930s, 1970s, and the early 2000s. The 1970s were a busy time 
+              for the library workers’ union and the food service workers’ union, populating many headlines in the pages of the Prince 
+              throughout this decade, with each group calling for just wages that would support their cost of living. Princeton’s food 
+              service union was formed in <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19781116-01.1.5&e=------197-en-20-">
+              1978</a> and over 90 food service workers held a <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=WeeklyBulletin19790514-01.1.2&e=-------en-20-">
+              strike</a> on May 7, 1979, leaving only two food service facilities open on campus. The activism of the 2000s was dominated by the war in Iraq. ‘Prince’ journalists recorded the 
+              <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20030324-01.2.14&srpos=4&e=------200-en-20--1--txt-txIN-------">arrests</a>
+              of Aderemi Artis GS ’07, Scott Gilmore ’04, and Traci Schlesinger-Franks GS ’06, who sat in the middle of Nassau Street in protest 
+              of what many considered genocide in Iraq. Students <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=TownTopics20040324-01.2.6&srpos=19&e=------200-en-20--1--txt-txIN-------">
+              continued</a> their efforts on the streets of New York City as around 75 students 
+              traveled to an anti-war protest. “Justice” has been most used often in recent years, often surrounding climate justice. On April 23, 
+              Sunrise Princeton held a <a href="https://www.dailyprincetonian.com/article/2024/04/princeton-news-stlife-sunrise-earth-day-climate-walkout-protest-coalition-organizing">walkout</a>
+              for Earth Day. One of the co-sponsors was the Princeton Young Democratic Socialists of America who were 
+              “demanding justice for workers because worker justice is climate justice … [and] immigrant justice is climate justice.”
             </p>
           </div>
       </div>
 
       <div class="word">
-        <h1 class="word-header" id="bprotest">∙∙PROTEST∙∙</h1>
+        <h1 class="word-header" id="bprotest">PROTEST</h1>
         <div class="graph-block-container" id="dprotest">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/protest.svg">
+              </div>
             </div>
           </div>
+        </div>
+
           <div class="word-text">
             <p>
-              INSERT TEXT ABOUT 'PROTEST' HERE!
+              Similar to “apartheid”, “protest” was used relatively rarely over course of the history of the ‘Prince’ until the 1950s, peaking in the 70s 
+              and 80s as protests over South Africa dominated student activism. At the same time, however, women’s rights continued to be a strong point 
+              of contention throughout the 1980s. Despite the University’s transition to co-education nearly two decades earlier, the Women’s Center Task 
+              Force organized several marches throughout the decade in response to sexual assault/harassment incidents and the hostile environment towards 
+              women on campus. The <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19880421-01.2.19&srpos=16&e=------198-en-20--1--txt-txIN-------">
+              marches</a> were streamlined under the phrase “take back the night,” as organizers Janet Sarbanes ’89 and Elana Sigall ’88 
+              stated, “If one of us has lost the right to walk safely in the night, we have all lost that right.”
             </p>
           </div>
-        </div>
       </div>
 
       <div class="word">
-        <h1 class="word-header" id="bdemonstration">∙∙DEMONSTRATION∙∙</h1>
+        <h1 class="word-header" id="bdemonstration">DEMONSTRATION</h1>
         <div class="graph-block-container" id="ddemonstration">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/demonstration.svg">
+              </div>
             </div>
           </div>
         </div>
         <div class="word-text">
           <p>
-            INSERT TEXT ABOUT 'DEMONSTRATION' HERE!
+            Mention of demonstrations in the ‘Prince’ rose briefly in the 1930s with activism against the United States’ involvement in World War II
+            then peaked significantly in the 1970s with student activism for divestment from South Africa. In early 1978, the People’s Front for the 
+            Liberation of Southern Africa picketed every weekday in front of Nassau Hall for the University’s divestment of its stock holdings in 
+            <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19880421-01.2.19&srpos=16&e=------198-en-20--1--txt-txIN-------">
+            South Africa.</a> The picket lasted over a month, garnering 
+            <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19780405-01.2.2&srpos=30&e=-------en-20--1--txt-txIN-------">
+            600</a> people to a rally at Cannon Green on April 4 in memory of the 10th anniversary of the assassination of 
+            Martin Luther King Jr., and his contribution towards the South African liberation movement. The use of the word has since been on the decline, reaching 
+            around 200 occurrences in the 2000s, equivalent to its rate before the 1930s. 
           </p>
         </div>
       </div>
 
       <div class="word">
-        <h1 class="word-header" id="bactivism">∙∙ACTIVISM∙∙</h1>
+        <h1 class="word-header" id="bactivism">ACTIVISM</h1>
         <div class="graph-block-container" id="dactivism">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/activism.svg">
+              </div>
             </div>
           </div>
         </div>
         <div class="word-text">
           <p>
-            INSERT TEXT ABOUT 'ACTIVISM' HERE!
+            Although almost never used in the ‘Prince’ before the 1960s, “activism” has seen a rapid and steady increase in its use since the Civil Rights Movement. 
+            Recent years have seen the highest use of the term. In 2020, amid the national Black Lives Matter movement, over 1,000 protesters 
+            <a href="https://www.dailyprincetonian.com/article/2020/09/princeton-racism-eisgruber-announcement-systemicracism">gathered</a> outside 
+            FitzRandolph Gate on June 2 to demand justice for Floyd’s death. Associate Dean of Religious Life and of the Chapel Dr. Theresa Thames said to the ‘Prince’ 
+            in 2020, “In the onslaught of oppression against black communities from health disparities to mental health, redlining, and all the way to modern-day lynchings, 
+            it has to end.” In September 2020, University President Christopher Eisgruber ’83 <a href="https://www.dailyprincetonian.com/article/2020/09/princeton-racism-eisgruber-announcement-systemicracism">announced</a>
+            new initiatives for diversifying University faculty and leadership and 
+            addressing systemic racism within and beyond the University, yet students looked for more transparency and clear timelines regarding change. “Activism” has emerged 
+            as the foremost word to describe Princeton’s intersection with broader societal issues.
           </p>
         </div>
       </div>
 
       <div class="word">
-        <h1 class="word-header" id="breferendum">∙∙REFERENDUM∙∙</h1>
+        <h1 class="word-header" id="breferendum">REFERENDUM</h1>
         <div class="graph-block-container" id="dreferendum">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/referendum.svg">
+              </div>
             </div>
           </div>
         </div>
         <div class="word-text">
           <p>
-            INSERT TEXT ABOUT 'REFERENDUM' HERE!
+            The first spike in “referendum” occurred in the 1920s surrounding a nationwide <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19200113-01.2.10&srpos=5&e=------192-en-20-Princetonian-1--txt-txIN-referendum----1920--">
+            push</a> of 700 universities to vote on a Peace Treaty <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19200115-01.1.1&e=------192-en-20-Princetonian-1--txt-txIN-referendum----1920--">
+            regarding</a> U.S. involvement in the League of Nations. While use of the word peaked in the 1970s, referendums 
+            at Princeton continue to be a way in which students ensure their voices are heard by administrators and the public at large. 
+            In 1971, the students voted on multiple referendums surrounding ROTC, <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19711117-01.2.2&srpos=12&e=-------en-20-Princetonian-1--txt-txIN-ROTC----1971--">
+            stipulating</a> “that ROTC be non-credit, cover all its own 
+            expenses, and have no academic rank for its officers.” “Referendum” coverage continued in the 1980s during this time centered 
+            around the Cold War. The referendum regarding nuclear freeze — stopping the development of nuclear weapons in the United States
+            — gained particular traction after the referendum failed in <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19830516-01.1.1&e=------198-en-20-">
+            1983</a> by only seven votes. When the referendum was voted again in 
+            October of the following academic year, it passed, exceeding the necessary percentage by almost 150 votes. Despite the referendum’s 
+            ultimate success and the movement’s popularity, one of the chief organizers of the referendum, Bernard Harcourt ’84, at the time 
+            commented on its efficacy, saying “Obviously the University isn’t going to endorse it. Obviously we’re going to have to keep on working.” 
+            Recent <a href="https://www.dailyprincetonian.com/article/2024/04/princeton-news-usg-referendum-bicker-honor-committee-disciplinary-divest">referendums</a>
+            have passed with varying levels of support. The Winter 2022 referendum to ​​expand gender-neutral residential restrooms 
+            passed with 58 percent of the vote, compared to 89 percent voting for the universal midterm grade reporting and optional faculty 
+            comments in Winter 2021. A 2022 referendum to <a href="https://www.dailyprincetonian.com/article/2022/04/caterpillar-referendum-princeton-eisgruber-response-dissociate">
+            boycott Caterpillar Inc. due to alleged Palestinian human rights violations <a href="https://www.dailyprincetonian.com/article/2022/04/usg-undergraduate-student-government-compromise-referendum-3-caterpillar-construction-israel-palestine-bds-appeal">
+            passed</a> with 52 percent of the vote, but the University took no action.
           </p>
         </div>
       </div>
       <div class="word">
-        <h1 class="word-header" id="badvocacy">∙∙ADVOCACY∙∙</h1>
+        <h1 class="word-header" id="badvocacy">ADVOCACY</h1>
         <div class="graph-block-container" id="dadvocacy">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/advocacy.svg">
+              </div>
             </div>
           </div>
         </div>
 
         <div class="word-text">
           <p>
-            INSERT TEXT ABOUT 'ADVOCACY' HERE!
+            ‘Prince’ coverage rarely contained the term “advocacy” until it rose in popularity in the 1980s. 
+            The word has been used in conjunction with raising awareness of environmental issues, mental health, 
+            and, most prevalently, HIV/AIDS. In 1991, ODUS, in conjunction with the AIDS Active Coalition for Education, 
+            sponsored a week-long <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19911203-01.2.2&e=-------en-20--1--txt-txIN-------">
+            program</a> that welcomed people with AIDS to spend the day on campus. “We want to show 
+            people that (people with AIDS) ...are not decrepit creatures, but human beings,” Elise Harris ’92 said to the 
+            ‘Prince’ at the time. In November 2005, the Student Global AIDS Campaign (SGAC) <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20051128-01.2.8&srpos=13&e=------200-en-20--1--txt-txIN-------"></a>
+            organized</a> a benefit rock concert at Colonial Club in addition to selling t-shirts and holding raffles at Frist Campus Center. Student activists 
+            <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian20050228-01.1.3&e=------">traveled</a>
+            to Washington, D.C. for an AIDS rally earlier that year. Since then, “advocacy” has been increasing, 
+            with its most drastic increase in use occurring in the past ten years.
           </p>
         </div>
       </div>
 
       <div class="word">
-        <h1 class="word-header" id="bapartheid">∙∙APARTHEID∙∙</h1>
+        <h1 class="word-header" id="bapartheid">APARTHEID</h1>
         <div class="graph-block-container" id="dapartheid">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/apartheid.svg">
+              </div>
             </div>
           </div>
         </div>
         <div class="word-text">
           <p>
-            INSERT TEXT ABOUT 'APARTHEID' HERE!
+            Campus discussions of apartheid remained absent until the late 1950s before rising to a peak in the mid-1980’s 
+            and falling off abruptly in the early 1990s with the system’s end in South Africa. For Princeton students, 
+            mentions of apartheid reached their highest incidence in 1985, when students and faculty protested for the 
+            University’s divestment from South Africa. On April 22, students <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19850422-01.2.11&srpos=6&e=-------en-20--1--txt-txIN-apartheid----1985%E2%80%93"></a>
+            camped</a> out in sleeping bags on Cannon Green, and on April 24, faculty petitioned for 
+            <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19850424-01.2.4&srpos=27&e=------198-en-20-Princetonian-21--txt-txIN-apartheid-ARTICLE---1985--">divestment</a>
+            of $500 million in University <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19850424-01.2.4&e=-------en-20--1--txt-txIN-apartheid----1985%e2%80%93--">investments</a>
+            from the apartheid regime. In response to University President William Bowen’s decision in May of 1985 not to divest, the Princeton Coalition for 
+            Divestment published an <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19850510-01.2.22&srpos=10&e=------198-en-20-Princetonian-1--txt-txIN-apartheid-ARTICLE---1985--">article</a>
+            in the ‘Prince’ breaking down and arguing against Bowen’s speech. On July 8, 
+            <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19850910-01.2.3&srpos=20&e=------198-en-20-Princetonian-1--txt-txIN-apartheid-ARTICLE---1985--">Bowen</a>
+            and 19 other college presidents signed a letter advocating for government sanctions. Recently, the usage of apartheid has 
+            been revived, with Princeton Israeli Apartheid Divest among other student groups have called for the University to 
+            <a href="https://www.dailyprincetonian.com/article/2024/04/princeton-news-adpol-gaza-solidarity-encampment-mccosh-courtyard-updates-live">
+            divest</a> from companies tied to Israel’s “ongoing military campaign, occupation, and apartheid policies.” 
           </p>
         </div>
       </div>
 
       <div class="word">
-        <h1 class="word-header" id="bsit-in">∙∙SIT-IN∙∙</h1>
+        <h1 class="word-header" id="bsit-in">SIT-IN</h1>
         <div class="graph-block-container" id="dsit-in">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/sit-in.svg">
+              </div>
             </div>
           </div>
         </div>
         <div class="word-text">
           <p>
-            INSERT TEXT ABOUT 'SIT-IN' HERE!
+            Discussions of sit-ins were essentially nonexistent until the late 1960s, and since then there have been several major 
+            sit-ins, such as the anti-<a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19720417-01.2.12&srpos=5&e=-------en-20-Princetonian-1--txt-txIN-sit%252Din-ARTICLE---1972--"></a>
+            ROTC</a> Nassau Hall sit-in of 1972, the South African divestment movement in 1978, and the 1989 
+            sit-in protesting the University’s allowance of discriminatory <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19891017-01.2.17&srpos=32&e=-------en-20-Princetonian-21--txt-txIN-sit%252Din-ARTICLE---1989--"></a>
+            recruiting</a> practices against minorities on campus. On April 14 and 15, 1978, students performed a sit-in at Nassau Hall 
+            in protest of the South African government’s apartheid 
+            policies. On May 10, 205 students involved in the sit-in were subjected to an almost five-hour hearing in Richardson 
+            Auditorium and each was given a disciplinary warning. As reported in the ‘Prince,’ the opening witness, George A. Riley ’79,
+            explained that the People’s Front for the Liberation of Southern Africa took action “with the full recognition that the 
+            university might take recourse against us” and did so to “forcefully present the nature of Princeton’s ties to apartheid 
+            and create an atmosphere conducive to discussion and <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19780510-01.2.2&srpos=8&e=-------en-20-Princetonian-1--txt-txIN-sit%252Din-ARTICLE---1978--"></a>
+            change</a>.” Recently, a “Gaza Solidarity Encampment” sit-in began on 
+            April 25 in McCosh courtyard and two graduate students were 
+            <a href="https://www.dailyprincetonian.com/article/2024/04/princeton-news-adpol-gaza-solidarity-encampment-launches-mccosh-courtyard">arrested</a> after students began to erect tents, echoing the sit-ins of the past.
           </p>
         </div>
       </div>
 
       <div class="word">
-        <h1 class="word-header" id="bdivest">∙∙DIVEST∙∙</h1>
+        <h1 class="word-header" id="bdivest">DIVEST</h1>
         <div class="graph-block-container" id="ddivest">
           <div class="graph-block">
             <div class="mountain-block">
               <p class="chart-header"></p>
-              <div class="mountain-chart"></div>
-              <p class="chart-title">word</p>
+              <div class="mountain-chart">
+                <img src="assets/divest.svg">
+              </div>
             </div>
           </div>
         </div>
         <div class="word-text">
           <p>
-            INSERT TEXT ABOUT 'DIVEST' HERE!
+            In a similar pattern to “apartheid,” the Prince did not significantly record the word “divest” until the late 1970s
+            and 1980s as students protested for Princeton’s divestment from South Africa. In November 1968, the 92nd Daily 
+            Princetonian Editorial Board <a href="https://papersofprinceton.princeton.edu/princetonperiodicals/?a=d&d=Princetonian19681121-01.2.8&srpos=3&e=01-01-1950-01-01-1970--en-20--1--txt-txIN-divest------"><
+            wrote</a> that “We believe that this university, with all due deliberate speed, should 
+            divest itself of corporations which have substantial affiliates or subsidiaries in South Africa, or which lend large 
+            amounts of money to the South African government.” Yet campus discussion of apartheid and divestment from South 
+            Africa did not rise significantly until the late 1970s. In the period following the sharp peak in 1978, 
+            coverage of divestment dropped significantly throughout the 1980s, returning to the low levels of the early 1960s. 
+            Following the period of slow increase in the 1990s, “Divest” coverage has risen higher than ever before towards the early 2010s. 
+            Today, “divest” is often a term used surrounding the Israel-Palestine conflict and the climate crisis, urging the University 
+            to divest its endowment from “companies that profit from or engage in the State of Israel’s ongoing military campaign, 
+            occupation, and apartheid policies” and “divesting the roughly $700 million of its endowment the University still holds 
+            in privately-owned fossil fuel companies.”
           </p>
         </div>
       </div>
       </div>
     </div>
   </div>
+  <button id="backToTop">Back<br> to top</button>
   <div class="intro-text" id="methodology">
     <h1>
       <strong>Methodology</strong>
     </h1>
     <br>
     <p>
-      <strong>Data Sources</strong>
+      The data used in our analysis for all years proceeding 2016 was sourced directly from Mudd Library, which shared with the ‘Prince’ a database containing 
+      optical character recognition (OCR) data from the Larry DuPraz archive. We did not independently verify this database against the raw image data in the 
+      archive or Princeton University Library’s archive explorer. For years succeeding 2016, the ‘Prince’ used data from internal web archives.
     </p>
     <p>
-      The data used in our analysis for all years proceeding 2015 was sourced directly from Mudd Library, which shared
-      with the ‘Prince’ a database containing optical character recognition (OCR) data from the Larry Dupraz archive. We
-      did not independently verify this database against the raw image data in the archive or Princeton University
-      Library’s archive explorer. For years succeeding 2015, the ‘Prince’ used data from internal web archives.
+      Special thanks to Anika Maskara and Elaine Huang for their work on the inaugural Archive project, 
+      <a href="https://projects.dailyprincetonian.com/140-years-princeton-history/">
+      140 Years of Princeton History as told by The Daily Princetonian archives</a>.
     </p>
-    <p>
-      <strong>Data Cleaning</strong>
-    </p>
-    <p>
-      We first removed all tokens of the form ’xx to prevent class year attributions from dominating frequency analysis.
-      We removed all capitalization and punctuation in order to ensure that errors in OCR, which can frequently
-      miscaptialize letters or insert unnecessary punctuation, would not prevent terms from being recognized. This means
-      that all emblematic terms are not case sensitive, e.g. tokens like “princeton,” “Princeton,” “pRinceton” are all
-      recognized as the same term.
-    </p>
-    <p>
-      <strong>Term Extraction</strong>
-    </p>
-    <p>
-      The ‘Prince’ used a whitespace tokenizer to count word frequencies for each word. Then, for each analyzed
-      word, we compared the frequency of all terms in that word against a corpus containing data for that word and
-      the preceding and following words. For the 2010s and 1880s, we used the single neighboring word. Like <a
-        href="https://pudding.cool/2018/12/brief-history/">The Pudding</a>, we only included words that were used at
-      least once in 10,000 words in each word to ensure the relevancy of analyzed terms. Using each word’s list of
-      disproportionately used words, we then searched the archives to find historically and culturally relevant uses of
-      those words to share in the summaries.
-    </p>
-    <br>
     <div><h2 style = "text-align: center;">***</h2></div>
     <br>
     <p>
-      <em>Anika Maskara is a Head Web Design and Development Editor and a Staff Data Reporter focused on digital
-        storytelling and interactive visualization. She is a senior and can be reached at amaskara@princeton.edu or on
-        Instagram @anikamaskara.</em>
+      <em>Alexa Wingate is an assistant Data editor for the ‘Prince.’
+      </em>
     </p>
     <p>
-      <em>Elaine Huang is an Assistant Data Editor for The Daily Princetonian. She is a sophomore concentrating in
-        Operations Research and Financial Engineering (ORFE) and can be reached at eh0313@princeton.edu.</em>
+      <em>Kate Alvarez is a contributing Data writer for the ‘Prince.’
+      </em>
+    </p>
+    <p>
+      <em>Kirill Sirik is a contributing Data writer for the ‘Prince.’
+      </em>
+    </p>
+    <p>
+      <em>Vasila Mirshamsova is a head Web Design and Development editor for the ‘Prince.’
+      </em>
+    </p>
+    <p>
+      <em>Lucy Wang is a staff Web Designer for the ‘Prince.’
+      </em>
     </p>
   </div>
+  </article>
 </body>
-
-<script type="module" src="script.js"></script>
-<script type="module" src="nav.js"></script>
-
 </html>
